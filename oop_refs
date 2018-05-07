@@ -1,0 +1,5 @@
+//class visibility
+
+public - is visible to everywhere
+protected - is visible to this class and subclasses
+private - is only visible to the defined class itself
