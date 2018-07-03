@@ -56,12 +56,7 @@ class Unicycle extends Bicycle {
     return $this->weight_kg;
   }
 
-  // public static function wheel_details() {
-  //   echo static::$wheels . "<br>";
-  //   echo parent::wheel_details();
-  // }
 
-  // public static
 
 }
 

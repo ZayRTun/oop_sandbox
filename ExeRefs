@@ -1,8 +1,27 @@
+0201
+  -Define Class-
+    Functions for Classes:
+      get_declared_classes(); // Returns an array of declared classes
+      class_exists($string);  // Returns T/F if the class(args) exists
+
 0202
+  -Instances/Objects-
+      Functions for Instances:
+        get_class($object): // Returns the name of object's class
+        is_a($object, $string); // Returns T/F if the obj has the same class name as the string(2nd arg)
+
+0203
+  -Class Properties-
+    Function for Properties:
+      get_class_vars($string); // Returns a assoc array of props that are defined in this class
+      get_object_vars($object); // Returns the current vars/props of this instance/object
+      property_exists($mixed(class/object), $string); // Returns T/F if the property(2nd arg) exists in the class/obj(1st arg)
+
+0204
+  -Class Methods-
+
+
 0401
 0601
 0604
-
-
-
-"editorIndentGuide.activeBackground": "#15ff00"
+0701
