@@ -49,6 +49,44 @@
 
   }
 
+
+  function inspect_class($class_name) {
+    $output = '';
+
+    $output .= $class_name;
+    $parent_class = get_parent_class($class_name);
+    if ($parent_class != '') {
+      $output .= " extends {$parent_class}";
+    }
+
+    $output .= "\n";
+
+    $class_vars = get_class_vars($class_name);
+    ksort($class_vars);
+    $output .= "properties: \n";
+    foreach ($class_vars as $k => $v) {
+      $output .= "- {$k}: {$v}\n";
+    }
+
+    $class_methods = get_class_methods($class_name);
+    sort($class_methods);
+    $output .= "methods: \n";
+    foreach ($class_methods as $k) {
+      $output .= "- {$k}\n";
+    }
+
+    return $output;
+
+  }
+
+  $class_names = ['Synthesizer', 'MonoSynth', 'PolySynth'];
+  foreach ($class_names as $class_name) {
+    echo nl2br(inspect_class($class_name));
+    echo '<br />';
+  }
+  echo '<hr />';
+
+
   $minibrute = new MonoSynth();
   $minibrute->brand = 'Arturia';
   $minibrute->model = 'MiniBrute';
