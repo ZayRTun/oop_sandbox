@@ -12,14 +12,44 @@
 
 0203
   -Class Properties-
-    Function for Properties:
+    Functions for Properties:
       get_class_vars($string); // Returns a assoc array of props that are defined in this class
       get_object_vars($object); // Returns the current vars/props of this instance/object
       property_exists($mixed(class/object), $string); // Returns T/F if the property(2nd arg) exists in the class/obj(1st arg)
 
 0204
   -Class Methods-
+    Functions for Methods:
+      get_class_methods($mixed(class/object)); // Returns the different methods available on it
+      method_exists($mixed, $string); // Returns T/F if the method(2nd arg) exists on the object/class(1st arg)
 
+0205
+  -Class Methods-
+  -Refer to an Instance-
+    Outside the class: $variable->
+    Inside the class: $this->
+
+0206
+  -Challenge 01-
+
+0301
+  -Class Inheritance-
+
+0302
+  -Class Inheritance-
+  -Define a Subclass-
+    functions for Inheritance:
+      get_parent_class($mixed); // Takes class/instance as an argument and returns the name of the parent class
+      is_subclass_of($mixed, $string); // Takes class/instance as an argument(1st arg) and checks if subclass of parent(2nd arg)
+      class_parents($mixed); // Returns all parent classes of class/instance
+
+0303
+  -Class Inheritance-
+  -Extend and Override
+
+0304
+  -Challenge 02-
+  -Inheritance-
 
 0401
 0601
