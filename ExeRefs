@@ -54,6 +54,26 @@
 0401
   -Visibility Modifiers-
 
+0402
+  -Visibility Modifiers-
+  -Beware of Overloading-
+    -A case to notice-
+      -Get value of undefined property: gives a notice no available
+      -Set value of undefined property: will define and set
+      -Private properties may seem to be visible in subclasses but not  really
+
+0403
+  -Setter and Getter Methods-
+
+0404
+  -Challenge 03-
+  -Access Control-
+
+0501
+  -The Static Modifies-
+
+0502
+  -
 
 0601
 0604
