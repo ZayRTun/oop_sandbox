@@ -47,6 +47,30 @@
    *      -It's a bad practice: PHP 5 warning, PHP 7 deprecation notice
    */
 
+  /**
+   * Inherited Static Behaviors
+   *  -Static properties and methods are inherited
+   *  -Visibility Modifiers function the same
+   *  -Inherited static properties are shared variables
+   *    -Changes to the parent value change subclass values
+   *    -Changes to a subclass value change the parent value
+   *
+   *  -Example-
+        class Student {
+          public  static $grades = ['Freshman', 'Sophomore', 'Junior', 'Senior'];
+        }
+
+        class PartTimeStudent extends Student {
+        }
+
+        echo PartTimeStudent::$grades[0]; // Freshman
+        PartTimeStudent::$grades[] = 'Alumni';
+
+        echo implode(', ', Student::$grades);
+        // Freshman, Sophomore, Junior, Senior, Alumni
+   *
+   * */
+
   class Student {
 
     public static $grades = ['Freshman', 'Sophomore', 'Junior', 'Senior'];
@@ -60,7 +84,7 @@
       return self::$total_students;
     }
 
-    public  static function add_student() {
+    public static function add_student() {
       self::$total_students++;
     }
 
@@ -74,3 +98,25 @@
   echo Student::count() . "<br />";
   Student::add_student();
   echo Student::count() . "<br />";
+
+  // Static properties and methods are inherited
+  class PartTimeStudent extends Student {
+
+  }
+
+  echo PartTimeStudent::$grades[0] . "<br />";
+  echo PartTimeStudent::motto() . "<br />";
+
+  // Changes are shared too!
+  PartTimeStudent::$grades[] = 'Alumni';
+  echo implode(', ', Student::$grades) . "<br />";
+
+  Student::add_student();
+  Student::add_student();
+  Student::add_student();
+  PartTimeStudent::add_student();
+
+  echo Student::count() . "<br />";
+  echo PartTimeStudent::count(). "<br />";
+
+
