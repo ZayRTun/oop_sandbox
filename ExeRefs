@@ -79,6 +79,17 @@
 0503
   -Class Constants-
 
+0504
+  -Refer to the Parent Class-
+
+0505
+  -Late Static Bindings-
+    -Functions for Late Static Bindings-
+      get_class() // Returns the parent class
+      get_called_class() // Return the current class
+
 0601
+  -Constructor Method-
+
 0604
 0701
