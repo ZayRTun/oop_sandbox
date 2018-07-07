@@ -43,7 +43,7 @@
     public $country = 'None';
 
     protected  $registration_id;
-    private $tuition = 0.00;
+    private $tuition = 500.00;
 
     public function full_name() {
       return $this->first_name . ' ' . $this->last_name;
@@ -61,31 +61,43 @@
       return 'Hello me!';
     }
 
+    public function tuition_fmt() {
+      return '$' . $this->tuition;
+    }
+
   }
 
-  $student1 = new Student();
+  class PartTimeStudent extends Student {
+    public function hello_parent() {
+      return $this->hello_family();
+    }
+  }
+
+  $student1 = new PartTimeStudent();
   $student1->first_name = 'Lucy';
   $student1->last_name = 'Ricardo';
 
-  $student2 = new Student();
-  $student2->first_name = 'Ethel';
-  $student2->last_name = 'Mertz';
+//  echo $student1->registration_id;
+//  echo $student1->tuition;
 
   echo $student1->full_name() . "<br />";
-  echo $student2->full_name() . "<br />";
 
-  echo $student1->say_hello() . "<br />";
-  echo $student2->say_hello() . "<br />";
-
-
-  // get_class_methods($mixed(class/object)); // Returns the different methods available on it
-  $class_methods = get_class_methods('Student'); //
-  echo "Class methods: " . implode(', ', $class_methods) . "<br />";
+  echo $student1->hello_world() . "<br />";
+//  echo $student1->hello_family() . "<br />";
+//  echo $student1->hello_me() . "<br />";
+  echo $student1->hello_parent() . "<br />";
 
 
-  // method_exists($mixed, $string); // Returns T/F if the method(2nd arg) exists on the object/class(1st arg)
-  if (method_exists('Student', 'say_hello')) {
-    echo "Method say_hello() exists in Student class.<br />";
-  } else {
-    echo "Method say_hello() does not exists in Student class.<br />";
-  }
+  /**
+   * -Overloading-
+   *  -A case to notice-
+   *    -Get value of undefined property: gives a notice no available
+   *    -Set value of undefined property: will define and set
+   *    -Private properties may seem to be visible in subclasses but not  really
+   * */
+//  $student1->tuition = 1000;
+//  echo $student1->tuition . "<br />";
+
+  // still calling tuition from Parent class
+  echo $student1->tuition_fmt() . "<br />";
+

@@ -21,22 +21,22 @@
 
 
   // magic method __construct
-  class Product {
-    private $name;
-    private $color;
-
-    public function __construct($name, $color) {
-      $this->name = $name;
-      $this->color = $color;
-      // echo $this->name . "<br>";
-      // echo $this->color . "<br>";
-    }
-  }
-
-  $shirt = new Product('Jacket', 'SkyBlue');
-
-  echo $shirt->name . "<br>";
-  echo $shirt->color . "<br>";
+//  class Product {
+//    private $name;
+//    private $color;
+//
+//    public function __construct($name, $color) {
+//      $this->name = $name;
+//      $this->color = $color;
+//       echo $this->name . "<br>";
+//       echo $this->color . "<br>";
+//    }
+//  }
+//
+//  $shirt = new Product('Jacket', 'SkyBlue');
+//
+//  echo $shirt->name . "<br>";
+//  echo $shirt->color . "<br>";
 
 
     // class Sofa {
