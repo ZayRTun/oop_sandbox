@@ -88,8 +88,32 @@
       get_class() // Returns the parent class
       get_called_class() // Return the current class
 
+0506
+  -Challenge 04-
+  -Static References-
+
 0601
-  -Constructor Method-
+  -Constructor Methods/Magic Methods-
+    -Are built in methods in objects that are automatically called.
+      -__construct();
+      -__destruct();
+      -__clone();
+      -__get(); __set();
+
+0602
+  -Constructor Methods/Magic Methods-
+  -Constructor Arguments-
+
+0603
+  -Constructor Methods/Magic Methods-
+  -Constructor Arguments-
+  -Destructor Method-
 
 0604
+  -Clone Magic Method-
+
+0605
+  -Clone Magic Method-
+  -Assignment by Reference-
+
 0701

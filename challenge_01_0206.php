@@ -6,7 +6,7 @@
    * Time: 11:31 AM
    */
 
-  class Bicycle {
+  /*class Bicycle {
 
     var $brand;
     var $model;
@@ -50,4 +50,4 @@
 
   $trek->set_weight_lbs(2);
   echo $trek->weight_kg . "<br />";
-  echo $trek->weight_lbs() . "<br />";
+  echo $trek->weight_lbs() . "<br />";*/

@@ -1,32 +1,40 @@
 <?php
   /**
-   * Challenge: Static references.
-   * User: Zay
-   * Date: 7/7/2018
-   * Time: 9:13 PM
+   * Challenge: Static References.
+   * User: zayt
+   * Date: 7/9/2018
+   * Time: 10:01 AM
    */
 
   class Bicycle {
 
     public static $instance_count = 0;
 
-
     public $brand;
     public $model;
     public $year;
-    public $category;
     public $description = 'Used bicycle';
+    public $category;
     protected $weight_kg = 0.0;
     protected static $wheels = 2;
 
-    public const CATEGORIES = ['Road', 'Mountain', 'Hybrid', 'Cruiser', 'City', 'BMX'];
+    public const CATEGORIES = [
+      'Road',
+      'Mountain',
+      'Hybrid',
+      'Cruiser',
+      'City',
+      'BMX'
+    ];
 
     public static function create() {
-      $class_name = get_called_class();
-      $obj = new $class_name;
-//      $obj = new static(); // self & static work here too!
+      $obj = new static();
       self::$instance_count++;
       return $obj;
+    }
+
+    public static function describe() {
+      echo 'A vehicle that is driven by paddle power.<br />';
     }
 
     public function name() {
@@ -59,31 +67,44 @@
     // visibility must match property being overridden
     protected static $wheels = 1;
 
+    public static function describe() {
+
+      if (static::$wheels == 1) {
+        echo 'Unicycle are ' . static::$wheels . ' wheel vehicle.<br />';
+      } else {
+        parent::describe();
+      }
+    }
+
     public function bug_test() {
       return $this->weight_kg;
     }
   }
 
-  $trek = new Bicycle();
+
+  $trek = new Bicycle;
   $trek->brand = 'Trek';
   $trek->model = 'Emonda';
   $trek->year = '2017';
 
-  echo 'Bicycle count: ' . Bicycle::$instance_count . "<br />";
-  echo 'Unicycle count: ' . Unicycle::$instance_count . "<br />";
+  echo Bicycle::$instance_count . '<br />';
 
   $bike = Bicycle::create();
   $uni = Unicycle::create();
 
-  echo 'Bicycle count: ' . Bicycle::$instance_count . "<br />";
-  echo 'Unicycle count: ' . Unicycle::$instance_count . "<br />";
-
-  echo "<hr />";
-  echo 'Categories: ' . implode(', ', Bicycle::CATEGORIES) . '<br />';
-  $trek->category = Bicycle::CATEGORIES[0];
-  echo 'Category: ' . $trek->category . '<br />';
-
+  echo Bicycle::$instance_count . '<br />';
+  echo Unicycle::$instance_count . '<br />';
   echo '<hr />';
 
-  echo 'Bicycle: ' . Bicycle::wheel_details() . '<br />';
-  echo 'Unicycle: ' . Unicycle::wheel_details() . '<br />';
+  echo 'Categories: ' . implode(', ', Bicycle::CATEGORIES) . '<br />';
+  $bike->category = Bicycle::CATEGORIES[0];
+  $uni->category = Unicycle::CATEGORIES[4];
+
+  echo 'Bicycle: ' . $bike->category . '<br />';
+  echo 'Unicycle: ' . $uni->category . '<br />';
+  echo '<hr />';
+
+  echo 'Bicycle: ';
+  echo Bicycle::describe() . '<br />';
+  echo 'Unicycle: ';
+  echo Unicycle::describe() . '<br />';
