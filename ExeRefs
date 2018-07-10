@@ -116,4 +116,15 @@
   -Clone Magic Method-
   -Assignment by Reference-
 
+0606
+  -Compare Objects-
+
+0607
+  -Autoload Undefined Classes-
+    -__autoload();
+    IMPORTANT!!
+      //Check the related exercise for details
+
 0701
+  -Project Introduction-
+    -To new directory->
